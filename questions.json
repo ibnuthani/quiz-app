@@ -1,0 +1,152 @@
+[
+    {
+        "question": "What is the capital of France?",
+        "options": ["Paris", "Berlin", "Madrid", "Rome"],
+        "answer": "Paris"
+    },
+    {
+        "question": "Which programming language is used with Flask?",
+        "options": ["Java", "C#", "Python", "Go"],
+        "answer": "Python"
+    },
+    {
+        "question": "2 + 5 = ?",
+        "options": ["5", "6", "7", "8"],
+        "answer": "7"
+    },
+    {
+        "question": "Which planet is closest to the Sun?",
+        "options": ["Venus", "Earth", "Mercury", "Mars"],
+        "answer": "Mercury"
+    },
+    {
+        "question": "What does CPU stand for?",
+        "options": ["Central Process Unit", "Central Processing Unit", "Control Processing Unit", "Computer Program Unit"],
+        "answer": "Central Processing Unit"
+    },
+    {
+        "question": "What year did Nigeria gain independence?",
+        "options": ["1958", "1960", "1963", "1970"],
+        "answer": "1960"
+    },
+    {
+        "question": "Which gas do plants absorb from the atmosphere?",
+        "options": ["Oxygen", "Hydrogen", "Nitrogen", "Carbon dioxide"],
+        "answer": "Carbon dioxide"
+    },
+    {
+        "question": "What is the largest ocean on Earth?",
+        "options": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+        "answer": "Pacific Ocean"
+    },
+    {
+        "question": "HTML stands for?",
+        "options": ["Hyper Text Multiple Language", "Hyper Technical Markup Language", "Hyper Text Markup Language", "High Text Markup Link"],
+        "answer": "Hyper Text Markup Language"
+    },
+    {
+        "question": "Which device stores data permanently?",
+        "options": ["RAM", "Cache", "Hard Disk", "Register"],
+        "answer": "Hard Disk"
+    },
+    {
+        "question": "5 × 12 = ?",
+        "options": ["50", "60", "55", "65"],
+        "answer": "60"
+    },
+    {
+        "question": "The process of removing errors from a program is called?",
+        "options": ["Compiling", "Executing", "Debugging", "Scanning"],
+        "answer": "Debugging"
+    },
+    {
+        "question": "Which country is known as the 'Giant of Africa'?",
+        "options": ["Ghana", "Egypt", "South Africa", "Nigeria"],
+        "answer": "Nigeria"
+    },
+    {
+        "question": "Water freezes at what temperature (°C)?",
+        "options": ["0°C", "10°C", "32°C", "100°C"],
+        "answer": "0°C"
+    },
+    {
+        "question": "Which organ pumps blood in the human body?",
+        "options": ["Liver", "Kidney", "Heart", "Lungs"],
+        "answer": "Heart"
+    },
+    {
+        "question": "Which of these is a web browser?",
+        "options": ["Linux", "Chrome", "Windows", "Android"],
+        "answer": "Chrome"
+    },
+    {
+        "question": "Which continent is the largest?",
+        "options": ["Africa", "Asia", "Europe", "North America"],
+        "answer": "Asia"
+    },
+    {
+        "question": "Which of these is a programming language?",
+        "options": ["Excel", "Python", "PowerPoint", "Word"],
+        "answer": "Python"
+    },
+    {
+        "question": "H2O is the chemical formula for?",
+        "options": ["Oxygen", "Hydrogen", "Salt", "Water"],
+        "answer": "Water"
+    },
+    {
+        "question": "Who wrote 'Things Fall Apart'?",
+        "options": ["Wole Soyinka", "Chimamanda Adichie", "Chinua Achebe", "Ngugi wa Thiong’o"],
+        "answer": "Chinua Achebe"
+    },
+    {
+        "question": "Which number is a prime number?",
+        "options": ["21", "15", "17", "25"],
+        "answer": "17"
+    },
+    {
+        "question": "What is 9 squared?",
+        "options": ["18", "81", "99", "72"],
+        "answer": "81"
+    },
+    {
+        "question": "Which part of the computer displays output?",
+        "options": ["Keyboard", "Monitor", "Mouse", "Speaker"],
+        "answer": "Monitor"
+    },
+    {
+        "question": "What is the fastest land animal?",
+        "options": ["Cheetah", "Lion", "Horse", "Tiger"],
+        "answer": "Cheetah"
+    },
+    {
+        "question": "What is the boiling point of water (°C)?",
+        "options": ["0°C", "50°C", "100°C", "150°C"],
+        "answer": "100°C"
+    },
+    {
+        "question": "Which is the longest river in the world?",
+        "options": ["Amazon", "Nile", "Congo", "Niger"],
+        "answer": "Nile"
+    },
+    {
+        "question": "RAM is what type of memory?",
+        "options": ["Permanent", "Secondary", "Volatile", "Optical"],
+        "answer": "Volatile"
+    },
+    {
+        "question": "Which of these is NOT an operating system?",
+        "options": ["Linux", "Windows", "Android", "Google"],
+        "answer": "Google"
+    },
+    {
+        "question": "Which device is used to connect devices to a network?",
+        "options": ["Monitor", "Router", "Printer", "Scanner"],
+        "answer": "Router"
+    },
+    {
+        "question": "What is 15 ÷ 3?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "5"
+    }
+]

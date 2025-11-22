@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>IBNUTHANI Quiz Application</h1>
+        <p class="timer">Time Left: <span id="time">300</span> seconds</p>
+
+        <div id="quiz-section" data-total="{{ questions|length }}">
+            <form id="quizForm">
+                {% for q in questions %}
+                    <div class="question">
+                        <p><strong>{{ loop.index }}. {{ q.question }}</strong></p>
+                        {% for option in q.options %}
+                            <label class="option">
+                                <input type="radio" name="{{ q.id }}" value="{{ option }}"> {{ option }}
+                                
+                            </label><br>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+
+        <div id="result-section" class="hidden">
+            <h2 id="result-text"></h2>
+            <label for="userName">Enter your name for the certificate:</label><br>
+            <label for="dateOfExam">Enter today's date</label>
+            <input id="userName" type="text" placeholder="Your name" /><br><br>
+            <button id="downloadCertificate" class="btn">Download Certificate</button>
+            <button id="retryBtn" class="btn">Try Again</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 Quiz App. © Abdurrahman Sani Ishaq All rights reserved.</p>
+    </footer>
+
+<script>
+    let finalScore = 0;
+    let finalTotal = parseInt(document.getElementById("quiz-section").dataset.total, 10) || 0;
+    let finalPercent = 0;
+
+    // TIMER — 5 minutes
+    let timeLeft = 300;
+    const timeEl = document.getElementById("time");
+    const intervalId = setInterval(() => {
+        timeEl.innerText = timeLeft;
+        timeLeft--;
+        if (timeLeft < 0) {
+            clearInterval(intervalId);
+            submitQuiz();
+        }
+    }, 1000);
+
+    document.getElementById("quizForm").onsubmit = function(e) {
+        e.preventDefault();
+        submitQuiz();
+    };
+
+    async function submitQuiz() {
+        clearInterval(intervalId);
+        const formData = new FormData(document.getElementById("quizForm"));
+        let answers = {};
+        formData.forEach((value, key) => answers[key] = value);
+
+        const res = await fetch("/submit", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(answers)
+        });
+        const data = await res.json();
+
+        finalScore = data.score;
+        finalPercent = data.percent;
+
+        document.getElementById("quiz-section").classList.add("hidden");
+        document.getElementById("result-section").classList.remove("hidden");
+
+        document.getElementById("result-text").innerHTML = 
+            `Your Score: <strong>${data.score}/${data.total}</strong><br>Percentage: <strong>${data.percent.toFixed(2)}%</strong>`;
+    }
+
+    document.getElementById("downloadCertificate").onclick = async function() {
+        const name = document.getElementById("userName").value.trim();
+        if (!name) return alert("Please enter your name.");
+        const res = await fetch("/certificate", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                name: name,
+                score: finalScore,
+                total: finalTotal,
+                percent: finalPercent
+            })
+        });
+        const blob = await res.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "certificate.pdf";
+        a.click();
+        window.URL.revokeObjectURL(url);
+    };
+
+    document.getElementById("retryBtn").onclick = function() {
+        window.location.reload();
+    };
+</script>
+</body>
+</html>
